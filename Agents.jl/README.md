@@ -15,7 +15,7 @@ julia file-name.jl
 ```
 
 ### Benchmark
-The results have been collected using the script `test_agent.sh`.
+The results have been collected using the script `test_agent.sh` that requires to change the model's file name to test (line 9).
 
 ```console 
 bash test_agents.sh output
