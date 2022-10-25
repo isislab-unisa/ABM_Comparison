@@ -1,7 +1,7 @@
 # Experimenting with Agent-based Model Simulation Tools: ABM Comparison
 This repository contains the code developed for the performance comparison included in the article "*Experimenting with Agent-based Model Simulation Tools*" submitted to Applied Science.
 
-**Tested ABM tools**
+**Included ABM tools**
 - [**ActressMas**](https://github.com/florinleon/ActressMas)
 - [**Agents.jl**](https://juliadynamics.github.io/Agents.jl/stable/)
 - [**AgentPy**](https://agentpy.readthedocs.io/en/latest/)
