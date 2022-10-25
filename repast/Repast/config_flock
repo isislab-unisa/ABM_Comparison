@@ -1,0 +1,11 @@
+# sample_batch_configuration.properties
+model.directory=/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/Flock
+scenario.directory=/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/Flock/Flock.rs
+param.file=/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/Flock/Flock.rs/parameters.xml
+batch.param.file=/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/Flock/batch/batch_params.xml
+output.directory=/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/Flock/output
+vm.arguments=-Xms4G -Xmx4G 
+key.directory=/isis/home/.ssh
+poll.frequency=0.05
+host.0.type=LOCAL
+host.0.instances=1

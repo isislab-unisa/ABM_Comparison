@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<sweep runs="1">
+<parameter name="xdim" type="constant" constant_type="int" value="400"></parameter>
+<parameter name="ydim" type="constant" constant_type="int" value="400"></parameter>
+<parameter name="initialnumberofsheep" type="constant" constant_type="int" value="76800"></parameter>
+<parameter name="initialnumberofwolves" type="constant" constant_type="int" value="51200"></parameter>
+<parameter name="wolfreproduce" type="constant" constant_type="double" value="10.0"></parameter>
+<parameter name="randomSeed" type="constant" constant_type="int" value="12345"></parameter>
+<parameter name="sheepgainfromfood" type="constant" constant_type="double" value="5.0"></parameter>
+<parameter name="grassregrowthtime" type="constant" constant_type="int" value="20"></parameter>
+<parameter name="wolfgainfromfood" type="constant" constant_type="double" value="13.0"></parameter>
+<parameter name="sheepreproduce" type="constant" constant_type="double" value="20.0"></parameter>
+<parameter name="runlength" type="constant" constant_type="double" value="200.0"></parameter>
+</sweep>
