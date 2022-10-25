@@ -23,7 +23,7 @@ global {
 	float predator_proba_reproduce <- 0.1;
 	int predator_nb_max_offsprings <- 2;
 	float predator_energy_reproduce <- 0.3;
-	file map_init <- image_file("/opt/gama-platform/configuration/org.eclipse.osgi/20/0/.cp/models/Toy Models/wsg/includes/data/raster_map.png");
+	file map_init <- image_file("/path/to/raster_map.png");
 	int nb_preys -> {length(prey)};
 	int nb_predators -> {length(predator)};
 	bool is_batch <- false;
@@ -124,7 +124,7 @@ species prey parent: generic_species {
 	float proba_reproduce <- prey_proba_reproduce;
 	int nb_max_offsprings <- prey_nb_max_offsprings;
 	float energy_reproduce <- prey_energy_reproduce;
-	image_file my_icon <- image_file("/opt/gama-platform/configuration/org.eclipse.osgi/20/0/.cp/models/Toy Models/wsg/includes/data/sheep.png");
+	image_file my_icon <- image_file("/path/to/sheep.png");
 
 	float energy_from_eat {
 		float energy_transfer <- 0.0;
@@ -148,7 +148,7 @@ species predator parent: generic_species {
 	float proba_reproduce <- predator_proba_reproduce;
 	int nb_max_offsprings <- predator_nb_max_offsprings;
 	float energy_reproduce <- predator_energy_reproduce;
-	image_file my_icon <- image_file("/opt/gama-platform/configuration/org.eclipse.osgi/20/0/.cp/models/Toy Models/wsg/includes/data/wolf.png");
+	image_file my_icon <- image_file("/path/to/wolf.png");
 
 	float energy_from_eat {
 		list<prey> reachable_preys <- prey inside (my_cell);

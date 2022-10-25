@@ -34,4 +34,5 @@ In the following table, :white_check_mark: means the model is already available,
 
 
 In each directory, you can find a Readme which contains all the informations needed to execute the tests. Pay attention, you have to correctly install frameworks in order to run the benchmarks. Feel free to contact us if you have any questions about scripts and/or tests or if you can't reproduce our results.
+All the results are the average time of 5 runs.
 

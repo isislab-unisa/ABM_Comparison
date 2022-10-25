@@ -1,7 +1,7 @@
 model ff
 
 global {
-	file my_csv_file <- csv_file("/Users/ddevin/Documents/vscode/gama/ff/matrix800.csv");
+	file my_csv_file <- csv_file("path/to/matrix100.csv");
 	init {
 		matrix data <- matrix(my_csv_file);
 		ask grid_cell{
