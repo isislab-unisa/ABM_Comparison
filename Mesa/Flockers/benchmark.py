@@ -22,5 +22,5 @@ flock = BoidFlockers()
 
 tt = timeit.Timer('runthemodel(flock)', setup=setup)
 a = min(tt.repeat(1, 1))
-# print("Mesa Flocking (ms):", a*1e3)
-print("Mesa Flocking (s):", a)
+# print("Mesa Flockers (ms):", a*1e3)
+print("Mesa Flockers (s):", a)

@@ -1,8 +1,8 @@
 ## [Agents.jl](https://juliadynamics.github.io/Agents.jl/stable/)
 
 ### Prerequisites
-- Julia language
-- Agent.jl library installed
+- Julia
+- Agent.jl
 
 ```julia
 using Pkg; Pkg.add("Agents")

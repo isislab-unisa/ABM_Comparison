@@ -29,7 +29,7 @@ The efficiency and scale of each tool has been tested in terms of execution time
 * **Schelling**: a simple segregation model where the agents are placed in a two-dimensional grid moving depending on the status of their neighbors.
 * **ForestFire**: a stochastic cellular automaton model reproducing a spreading forest fire.
 
-Implementation provided by the ABM tools' authors have been used if available. Otherwise, the model is been developed from scratch following the platforms guidelines, documentation, and examples. Each model is been implemented to be as similar as possible among the different tools included; however, the differences between the tools introduce some inevitably variance. 
+Implementation provided by the ABM tools' authors have been used if available and are not reported here. Otherwise, the model is been developed from scratch following the platforms guidelines, documentation, and examples. Each model is been implemented to be as similar as possible among the different tools included; however, the differences between the tools introduce some inevitably variance. 
 
 The following table summarize which models is provided by the ABM tools' authors (:white_check_mark:) and which has been developed from scratch (:x:).
 
@@ -60,7 +60,7 @@ Frameworks' performance has been tested with different models configurations, st
 The ForestFire model maintains a density of 70%.
 
 ### Important note
-To correctly use the script provided it is required that the tools is correctly installed with the relative prerequisites.
+To correctly use the script provided it is required that the tools is correctly installed with the corresponding prerequisites.
 
 ### Reference
 Antelmi, A.; Cordasco, G.; D’Ambrosio, G.; De Vinco, D.; Spagnuolo, C. Experimenting with Agent-based Model Simulation Tools. Applied Sciences 2022.

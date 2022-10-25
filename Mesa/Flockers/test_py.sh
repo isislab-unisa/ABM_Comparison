@@ -12,7 +12,7 @@ done
 
 grep "real" $PARTIAL > $OUTPUT
 echo "------" >> $OUTPUT
-grep "Mesa Flocking" $PARTIAL >> $OUTPUT
+grep "Mesa Flockers" $PARTIAL >> $OUTPUT
 
 if [ -f $PARTIAL ]; then
     rm $PARTIAL

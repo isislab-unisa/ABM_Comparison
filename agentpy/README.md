@@ -1,22 +1,26 @@
-## AgentPy
+## [AgentPy](https://agentpy.readthedocs.io/en/latest/)
 
-- Install the library using pip
+### Prerequisites
+- Python
+- AgentPy
 
 ```bash
 pip install agentpy
 ```
-- You can use the functions provided by the framework to run multiple experiments. Be aware that the time showed at the end of simulations is added up for each repetition. We ran the model multiple times (eg. line 120-123 in flock.py) and we used the scripts provided in the folder to retrieve all the results at once. 
+
+### Model Execution
+Each model can be executed using the following command replacing `<file-name.py>` with the desired model's name and `<file-results.txt>` with the name where results will be saved (e.g. `python flockers.py > 1000.txt`).
 
 ```python
-python flock.py > 1000.txt
-# next configuration
-python flock.py > 2000.txt
+python file-name.py > file-results.txt
 ```
+
+### Benchmark
+The tests have been conducted running the model multiple times and using the script `script.sh` to retrieve the results.
+
 ```bash
 bash script.sh
 ```
 
-
-
-
-
+### Notes
+The framework provides specific fuctions to run multiple experiments. However, the resulting time is additive on each simulations executed.

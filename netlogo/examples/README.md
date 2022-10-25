@@ -1,11 +1,11 @@
+## [NetLogo](https://ccl.northwestern.edu/netlogo/index.html)
 
+### Prerequisites
+- [NetLogo](https://ccl.northwestern.edu/netlogo/download.shtml)
 
-## Netlogo
-
-- install netlogo https://ccl.northwestern.edu/netlogo/download.shtml
-- use the scripts provided in this repo to build and run the examples
+### Benchmark
+Run the script `netlogo_<model-name>.sh` replacing `<mode-name>` with the name of the corresponding model (e.g. `netlogo_wsg.sh`).
 
 ```console 
-bash netlogo_flock.sh
+bash netlogo_<mode-name>.sh
 ```
-
