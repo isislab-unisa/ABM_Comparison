@@ -1,0 +1,343 @@
+ERROR [AWT-EventQueue-0] 2022-03-01 17:13:36,416 repast.simphony.ui.RSApplication - Error while initializing simulation
+java.lang.NullPointerException: Canvas3D: null GraphicsConfiguration
+	at org.jogamp.java3d.Canvas3D.checkForValidGraphicsConfig(Canvas3D.java:946)
+	at org.jogamp.java3d.Canvas3D.<init>(Canvas3D.java:1015)
+	at org.jogamp.java3d.exp.swing.JCanvas3D$InternalCanvas3D.<init>(JCanvas3D.java:672)
+	at org.jogamp.java3d.exp.swing.JCanvas3D.createCanvas(JCanvas3D.java:323)
+	at org.jogamp.java3d.exp.swing.JCanvas3D.getOffscreenCanvas3D(JCanvas3D.java:366)
+	at repast.simphony.visualization.visualization3D.Display3D.initFirstRender(Display3D.java:158)
+	at repast.simphony.visualization.visualization3D.Display3D.render(Display3D.java:429)
+	at repast.simphony.ui.RSGui.addViewsFromRegistry(RSGui.java:301)
+	at repast.simphony.ui.RSApplication.initSim(RSApplication.java:164)
+	at repast.simphony.ui.RSApplication.start(RSApplication.java:189)
+	at repast.simphony.ui.action.StartRun.actionPerformed(StartRun.java:17)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6635)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6400)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5011)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+INFO  [AWT-EventQueue-0] 2022-03-01 17:22:57,967 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-01 17:22:57,999 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:23:05,027 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost5287314164821552395.zip to 
+/tmp/simphony_model_1646151782077 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:23:05,075 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:23:05,076 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0500
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:23:05,077 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646151782077/isis_localhost5287314164821552395.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:23:05,422 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-01 17:23:12,308 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-01 17:23:12,309 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646151782077/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-01 17:23:12,309 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-01 17:23:12,309 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-01 17:23:12,309 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [Thread-0] 2022-03-01 17:23:12,410 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-01 17:23:12,411 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646151782077/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-01 17:23:12,411 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-01 17:23:12,411 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-01 17:23:12,411 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-01 17:24:05,431 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646151782077 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:24:05,432 repast.simphony.batch.ssh.SessionsDriver - Run Time: 1,0059
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:24:05,443 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646151782077
+WARN  [SwingWorker-pool-1-thread-1] 2022-03-01 17:24:05,451 repast.simphony.batch.ssh.OutputFinder - No model output found matching glob:{**/,}ModelOutput*.batch_param_map.txt in /tmp/simphony_model_1646151782077/instance_2
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:24:05,452 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:24:05,455 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0003
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:24:05,455 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 1,0564
+INFO  [AWT-EventQueue-0] 2022-03-01 17:42:00,227 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-01 17:42:00,265 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:42:07,170 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost4382874859837741906.zip to 
+/tmp/simphony_model_1646152924394 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:42:07,227 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:42:07,228 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0472
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:42:07,228 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646152924394/isis_localhost4382874859837741906.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:42:07,718 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-01 17:42:14,737 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-01 17:42:14,738 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646152924394/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-01 17:42:14,738 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-01 17:42:14,738 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-01 17:42:14,738 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-01 17:43:07,726 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646152924394 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:43:07,727 repast.simphony.batch.ssh.SessionsDriver - Run Time: 1,0083
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:43:07,735 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646152924394
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:43:07,743 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:43:07,744 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0003
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 17:43:07,745 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 1,0559
+INFO  [AWT-EventQueue-0] 2022-03-01 18:09:25,883 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-01 18:09:25,918 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:09:32,977 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost14197352474397080953.zip to 
+/tmp/simphony_model_1646154570097 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:09:33,022 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:09:33,023 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0487
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:09:33,023 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646154570097/isis_localhost14197352474397080953.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:09:33,616 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-01 18:09:40,763 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-01 18:09:40,764 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646154570097/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-01 18:09:40,764 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-01 18:09:40,764 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-01 18:09:40,764 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-01 18:10:33,622 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646154570097 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:10:33,623 repast.simphony.batch.ssh.SessionsDriver - Run Time: 1,0100
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:10:33,629 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646154570097
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:10:33,635 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:10:33,636 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0002
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:10:33,636 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 1,0590
+INFO  [AWT-EventQueue-0] 2022-03-01 18:21:54,454 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-01 18:21:54,489 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:22:00,418 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost3571445760477413490.zip to 
+/tmp/simphony_model_1646155317596 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:22:00,464 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:22:00,465 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0478
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:22:00,465 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646155317596/isis_localhost3571445760477413490.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:22:00,987 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-01 18:22:09,336 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-01 18:22:09,337 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646155317596/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-01 18:22:09,337 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-01 18:22:09,337 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-01 18:22:09,337 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-01 18:23:00,997 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646155317596 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:24:00,998 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646155317596 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:25:00,999 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646155317596 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:26:01,000 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646155317596 for DONE:  no
+INFO  [AWT-EventQueue-0] 2022-03-01 18:36:42,224 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-01 18:36:42,292 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:36:49,461 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost14067679016438473655.zip to 
+/tmp/simphony_model_1646156206516 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:36:49,516 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:36:49,517 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0500
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:36:49,518 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646156206516/isis_localhost14067679016438473655.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:36:49,862 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-01 18:36:57,141 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-01 18:36:57,142 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646156206516/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-01 18:36:57,142 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-01 18:36:57,142 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-01 18:36:57,142 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-01 18:37:49,866 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:38:49,867 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:39:49,868 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:40:49,869 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:41:49,870 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:42:49,870 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:43:49,873 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  no
+INFO  [pool-2-thread-1] 2022-03-01 18:44:49,877 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646156206516 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:44:49,879 repast.simphony.batch.ssh.SessionsDriver - Run Time: 8,0060
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:44:49,891 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646156206516
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:44:49,898 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:44:49,899 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0003
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-01 18:44:49,899 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 8,0565
+INFO  [AWT-EventQueue-0] 2022-03-02 10:42:01,769 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-02 10:42:01,801 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:08,341 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost2805317185181395742.zip to 
+/tmp/simphony_model_1646214125593 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:08,396 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:08,397 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0467
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:08,397 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646214125593/isis_localhost2805317185181395742.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:08,844 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-02 10:42:15,809 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 10:42:15,809 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646214125593/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 10:42:15,809 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 10:42:15,809 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 10:42:15,810 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [Thread-0] 2022-03-02 10:42:16,098 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 10:42:16,098 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646214125593/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 10:42:16,098 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 10:42:16,098 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 10:42:16,098 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-02 10:42:38,850 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646214125593 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:38,856 repast.simphony.batch.ssh.SessionsDriver - Run Time: 0,5076
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:38,882 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646214125593
+WARN  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:38,890 repast.simphony.batch.ssh.OutputFinder - No model output found matching glob:{**/,}ModelOutput*.batch_param_map.txt in /tmp/simphony_model_1646214125593/instance_2
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:38,891 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:38,892 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0006
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:42:38,892 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 0,5551
+INFO  [AWT-EventQueue-0] 2022-03-02 10:49:21,584 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-02 10:49:21,585 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-2] 2022-03-02 10:49:27,747 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost2594410282072588391.zip to 
+/tmp/simphony_model_1646214564870 ...
+INFO  [SwingWorker-pool-1-thread-2] 2022-03-02 10:49:27,919 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-2] 2022-03-02 10:49:27,920 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0508
+INFO  [SwingWorker-pool-1-thread-2] 2022-03-02 10:49:27,921 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646214564870/isis_localhost2594410282072588391.zip
+INFO  [SwingWorker-pool-1-thread-2] 2022-03-02 10:49:28,269 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [AWT-EventQueue-0] 2022-03-02 10:50:22,486 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-02 10:50:22,516 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:29,109 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost9562020625171022215.zip to 
+/tmp/simphony_model_1646214626141 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:29,167 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:29,168 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0504
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:29,168 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646214626141/isis_localhost9562020625171022215.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:29,914 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-02 10:50:38,111 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 10:50:38,111 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646214626141/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 10:50:38,112 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 10:50:38,112 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 10:50:38,112 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-02 10:50:59,919 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646214626141 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:59,921 repast.simphony.batch.ssh.SessionsDriver - Run Time: 0,5125
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:59,928 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646214626141
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:59,935 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:59,937 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0003
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:50:59,937 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 0,5633
+INFO  [AWT-EventQueue-0] 2022-03-02 10:54:25,735 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-02 10:54:25,769 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:54:32,796 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost15305973247442650574.zip to 
+/tmp/simphony_model_1646214869806 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:54:32,866 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:54:32,867 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0510
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:54:32,867 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646214869806/isis_localhost15305973247442650574.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:54:33,210 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-02 10:54:40,075 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 10:54:40,076 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646214869806/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 10:54:40,076 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 10:54:40,076 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 10:54:40,076 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [Thread-0] 2022-03-02 10:54:40,538 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 10:54:40,538 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646214869806/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 10:54:40,538 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 10:54:40,538 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 10:54:40,538 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-02 10:55:03,222 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646214869806 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:55:03,226 repast.simphony.batch.ssh.SessionsDriver - Run Time: 0,5060
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:55:03,232 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646214869806
+WARN  [SwingWorker-pool-1-thread-1] 2022-03-02 10:55:03,238 repast.simphony.batch.ssh.OutputFinder - No model output found matching glob:{**/,}ModelOutput*.batch_param_map.txt in /tmp/simphony_model_1646214869806/instance_2
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:55:03,239 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:55:03,240 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0002
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 10:55:03,241 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 0,5573
+INFO  [AWT-EventQueue-0] 2022-03-02 12:20:37,208 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-02 12:20:37,239 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:20:43,707 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost6443857282311026826.zip to 
+/tmp/simphony_model_1646220040820 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:20:43,760 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:20:43,761 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0490
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:20:43,761 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646220040820/isis_localhost6443857282311026826.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:20:44,103 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-02 12:20:50,604 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 12:20:50,605 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646220040820/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 12:20:50,605 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 12:20:50,605 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 12:20:50,605 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [Thread-0] 2022-03-02 12:20:51,054 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 12:20:51,054 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646220040820/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 12:20:51,054 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 12:20:51,054 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 12:20:51,054 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-02 12:21:14,116 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646220040820 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:21:14,118 repast.simphony.batch.ssh.SessionsDriver - Run Time: 0,5060
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:21:14,126 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646220040820
+WARN  [SwingWorker-pool-1-thread-1] 2022-03-02 12:21:14,134 repast.simphony.batch.ssh.OutputFinder - No model output found matching glob:{**/,}ModelOutput*.batch_param_map.txt in /tmp/simphony_model_1646220040820/instance_2
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:21:14,135 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:21:14,136 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0003
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:21:14,137 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 0,5554
+INFO  [AWT-EventQueue-0] 2022-03-02 12:25:08,754 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-02 12:25:08,786 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:15,805 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost590924691876384190.zip to 
+/tmp/simphony_model_1646220312923 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:15,857 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:15,858 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0489
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:15,858 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646220312923/isis_localhost590924691876384190.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:16,199 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-02 12:25:23,094 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 12:25:23,094 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646220312923/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 12:25:23,094 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 12:25:23,095 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 12:25:23,095 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [Thread-0] 2022-03-02 12:25:23,376 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 12:25:23,376 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646220312923/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 12:25:23,376 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 12:25:23,376 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 12:25:23,376 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-02 12:25:46,208 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646220312923 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:46,210 repast.simphony.batch.ssh.SessionsDriver - Run Time: 0,5059
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:46,216 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646220312923
+WARN  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:46,222 repast.simphony.batch.ssh.OutputFinder - No model output found matching glob:{**/,}ModelOutput*.batch_param_map.txt in /tmp/simphony_model_1646220312923/instance_2
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:46,223 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:46,224 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0002
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 12:25:46,224 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 0,5551
+INFO  [AWT-EventQueue-0] 2022-03-02 13:51:42,118 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output/config.props
+INFO  [AWT-EventQueue-0] 2022-03-02 13:51:42,155 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	/home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/batch/batch_params.xml to
+	/tmp/unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:51:48,221 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally /tmp/isis_localhost8283449362398251338.zip to 
+/tmp/simphony_model_1646225505852 ...
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:51:48,266 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:51:48,267 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,0402
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:51:48,267 repast.simphony.batch.ssh.LocalSession - Unzipping model /tmp/simphony_model_1646225505852/isis_localhost8283449362398251338.zip
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:51:48,577 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [Thread-0] 2022-03-02 13:51:55,967 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 13:51:55,968 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646225505852/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 13:51:55,968 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 13:51:55,968 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 13:51:55,968 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [Thread-0] 2022-03-02 13:51:56,056 repast.simphony.batch.ssh.LocalSession - WARNING: An illegal reflective access operation has occurred
+INFO  [Thread-0] 2022-03-02 13:51:56,056 repast.simphony.batch.ssh.LocalSession - WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/tmp/simphony_model_1646225505852/lib/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
+INFO  [Thread-0] 2022-03-02 13:51:56,056 repast.simphony.batch.ssh.LocalSession - WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+INFO  [Thread-0] 2022-03-02 13:51:56,056 repast.simphony.batch.ssh.LocalSession - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+INFO  [Thread-0] 2022-03-02 13:51:56,056 repast.simphony.batch.ssh.LocalSession - WARNING: All illegal access operations will be denied in a future release
+INFO  [pool-2-thread-1] 2022-03-02 13:52:18,581 repast.simphony.batch.ssh.LocalDonePoller - Polled /tmp/simphony_model_1646225505852 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:52:18,582 repast.simphony.batch.ssh.SessionsDriver - Run Time: 0,5053
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:52:18,587 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in /tmp/simphony_model_1646225505852
+WARN  [SwingWorker-pool-1-thread-1] 2022-03-02 13:52:18,594 repast.simphony.batch.ssh.OutputFinder - No model output found matching glob:{**/,}ModelOutput*.batch_param_map.txt in /tmp/simphony_model_1646225505852/instance_2
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:52:18,594 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into /home/isis/ABM_Framework_Comparisons/Repast/eclipse-workspace/PredatorPrey/output
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:52:18,596 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0002
+INFO  [SwingWorker-pool-1-thread-1] 2022-03-02 13:52:18,596 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 0,5458

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<sweep runs="1">
+<parameter name="initialNumPrey" type="constant" constant_type="int" value="128000"/>
+<parameter name="dim" type="constant" constant_type="int" value="400"/>
+<parameter name="borderType" type="constant" constant_type="java.lang.String" value="Wrap_Around"/>
+<parameter name="initialNumPred" type="constant" constant_type="int" value="0"/>
+<parameter name="predMaxSpeed" type="constant" constant_type="double" value="300.0"/>
+<parameter name="timeScale" type="constant" constant_type="double" value="0.075"/>
+<parameter name="initialPreyNeighborDistance" type="constant" constant_type="int" value="50"/>
+<parameter name="preyFearForce" type="constant" constant_type="double" value="-500000.0"/>
+<parameter name="preyAcceleration" type="constant" constant_type="double" value="1.0"/>
+<parameter name="killRadius" type="constant" constant_type="double" value="10.0"/>
+<parameter name="preyFearRadius" type="constant" constant_type="double" value="80.0"/>
+<parameter name="trackPredators" type="constant" constant_type="boolean" value="true"/>
+<parameter name="preyAttractForce" type="constant" constant_type="double" value="60.0"/>
+<parameter name="predAcceleration" type="constant" constant_type="double" value="3.0"/>
+<parameter name="preyRepelForce" type="constant" constant_type="double" value="-80.0"/>
+<parameter name="preySpacing" type="constant" constant_type="double" value="100.0"/>
+<parameter name="maxPreyNeighbors" type="constant" constant_type="int" value="7"/>
+<parameter name="threadType" type="constant" constant_type="java.lang.String" value="Single-thread"/>
+<parameter name="preyMaxSpeed" type="constant" constant_type="double" value="70.0"/>
+</sweep>

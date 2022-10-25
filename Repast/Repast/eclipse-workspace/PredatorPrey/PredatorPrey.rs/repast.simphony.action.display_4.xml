@@ -1,0 +1,74 @@
+<repast.simphony.visualization.engine.CartesianDisplayDescriptor simphonyVersion="2.8.0">
+  <name>3D World</name>
+  <type>3D</type>
+  <styles>
+    <entry>
+      <string>PredatorPrey.agents.Sheep</string>
+      <string>PredatorPrey.styles.SimpleNodeStyle</string>
+    </entry>
+    <entry>
+      <string>PredatorPrey.agents.Wolf</string>
+      <string>PredatorPrey.styles.SimpleNodeStyle</string>
+    </entry>
+    <entry>
+      <string>PredatorPrey.agents.Grass</string>
+      <string>PredatorPrey.styles.GrassNodeStyle</string>
+    </entry>
+  </styles>
+  <editedStyles/>
+  <netStyles/>
+  <editedNetStyles/>
+  <frequency>ON_MOVE</frequency>
+  <schedParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>0</hashCode>
+  </schedParams>
+  <layoutClassName>foo.bar.baz</layoutClassName>
+  <layoutProjection>Continuous Space</layoutProjection>
+  <layoutInterval>0</layoutInterval>
+  <layerOrder/>
+  <projections>
+    <repast.simphony.scenario.data.ProjectionData>
+      <id>Continuous Space</id>
+      <attributes/>
+      <type>continuous space</type>
+    </repast.simphony.scenario.data.ProjectionData>
+  </projections>
+  <visualizationProperties class="repast.simphony.visualization.UnitSizeLayoutProperties">
+    <unitSize>0.06</unitSize>
+  </visualizationProperties>
+  <projectionDescriptors>
+    <entry>
+      <string>Continuous Space</string>
+      <repast.simphony.visualization.continuous.ContinuousProjectionDescriptor>
+        <proj reference="../../../../projections/repast.simphony.scenario.data.ProjectionData"/>
+        <props>
+          <entry>
+            <string>repast.simphony.visualization.continuous.ContinuousDecorator</string>
+            <map>
+              <entry>
+                <string>COLOR</string>
+                <int>-1</int>
+              </entry>
+              <entry>
+                <string>UNIT_SIZE</string>
+                <float>0.06</float>
+              </entry>
+              <entry>
+                <string>SHOW</string>
+                <boolean>false</boolean>
+              </entry>
+            </map>
+          </entry>
+        </props>
+      </repast.simphony.visualization.continuous.ContinuousProjectionDescriptor>
+    </entry>
+  </projectionDescriptors>
+  <props/>
+  <valueLayers/>
+</repast.simphony.visualization.engine.CartesianDisplayDescriptor>
