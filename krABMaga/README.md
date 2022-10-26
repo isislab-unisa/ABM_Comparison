@@ -2,7 +2,7 @@
 
 ### Prerequisites
 - Rust
-- krABMaga (inside the Cargo.toml file is already added as a dependency)
+- krABMaga (inside each Cargo.toml file is already added as a dependency)
 
 ### Model Execution
 Each model can be executed using the following command 

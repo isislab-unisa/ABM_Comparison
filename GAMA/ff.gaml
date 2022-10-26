@@ -72,7 +72,6 @@ experiment ff type: gui {
 
 experiment fff type: batch repeat: 5 keep_seed: false until: (cycle = 200) {	
 	reflex stop_sim when: (cycle = 199) {
-		write "shskhfsk";
 		save ("time " + total_duration) to: "result.csv" type: "text" rewrite: (int(self)=0) ? true : false;		
 	}
 	
