@@ -2,11 +2,7 @@
 
 ### Prerequisites
 - Rust
-- krABMaga
-
-```bash
-comando installazione libreria
-```
+- krABMaga (inside the Cargo.toml file is already added as a dependency)
 
 ### Model Execution
 Each model can be executed using the following command 
@@ -18,9 +14,8 @@ cargo run --release
 ### Benchmark
 The results have been collected using the script `test.sh`.
 
-
 ```bash
-bash script.sh
+bash test.sh 1000
 ```
 
 ### Notes
