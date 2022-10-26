@@ -2,17 +2,18 @@
 
 ### Prerequisites
 - Rust
-- krABMaga (inside each Cargo.toml file is already added as a dependency)
+- krABMaga 
+  - The dependency to install the library is already within the Cargo.toml file of each model
 
 ### Model Execution
-Each model can be executed using the following command 
+Within the folder of the desired model to run execute the following command.
 
 ```bash
 cargo run --release
 ```
 
 ### Benchmark
-The results have been collected using the script `test.sh`.
+Copy and paste the script file `test.sh` in the model's subfolder and run it specifying the desired number of agents to simulate.
 
 ```bash
 bash test.sh 1000
