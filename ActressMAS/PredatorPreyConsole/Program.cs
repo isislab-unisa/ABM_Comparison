@@ -16,6 +16,7 @@
 
 using System;
 using System.Diagnostics;
+using ActressMas;
 
 namespace PredatorPrey
 {
@@ -36,19 +37,36 @@ namespace PredatorPrey
 
             for (int i = 0; i < Settings.NoDoodlebugs; i++)
             {
-                var a = new DoodlebugAgent();
+                int e = _rand.Next(20);
+                var a = new DoodlebugAgent(e);
+                
                 worldEnv.Add(a, world.CreateName(a)); // unique name
                 world.AddAgentToMap(a, randVect[i]);
             }
 
             for (int i = Settings.NoDoodlebugs; i < Settings.NoDoodlebugs + Settings.NoAnts; i++)
             {
-                var a = new AntAgent();
+                int e = _rand.Next(8);
+                var a = new Sheep(e);
                 worldEnv.Add(a, world.CreateName(a));
                 world.AddAgentToMap(a, randVect[i]);
+                
             }
 
-            worldEnv.Start();
+            //worldEnv.Start();
+            int turn = 0;
+
+            while (true)
+            {
+                worldEnv.RunTurn(turn);
+                world.UpdateGrass();
+                turn++;
+                if ( turn >= 200)
+                    break;
+                
+            }
+
+            worldEnv.SimulationFinished();
             Console.WriteLine("time elapsed - " + timer.Elapsed.ToString());
             timer.Stop();
         }

@@ -38,11 +38,11 @@ namespace PredatorPrey
         {
             World w = Memory["World"];
 
-            w.CountInsects(out int noDoodlebugs, out int noAnts);
+            w.CountInsects(out int noDoodlebugs, out int noSheeps);
 
-            Console.WriteLine($"Turn {turn + 1}: {noDoodlebugs} doodlebugs, {noAnts} ants");
+            Console.WriteLine($"Turn {turn + 1}: {noDoodlebugs} wolves, {noSheeps} sheeps");
 
-            _sw.WriteLine($"{noDoodlebugs}\t{noAnts}");
+            _sw.WriteLine($"{noDoodlebugs}\t{noSheeps}");
             _sw.Flush();
 
             if (Settings.ShowWorld)

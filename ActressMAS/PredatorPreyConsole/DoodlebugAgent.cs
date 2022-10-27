@@ -24,6 +24,10 @@ namespace PredatorPrey
     {
         private int _lastEaten;
 
+        public DoodlebugAgent(int energy) : base(energy)
+        {
+        }
+
         public override void Setup()
         {
             _turnsSurvived = 0;
@@ -61,24 +65,31 @@ namespace PredatorPrey
             _turnsSurvived++;
             _lastEaten++;
 
+            //move
+            TryToMove();
+
+            _energy -= 1;
             // eat
             bool success = TryToEat();
             if (success)
-                _lastEaten = 0;
-
-            // move
-            if (!success)
-                TryToMove(); // implemented in base class InsectAgent
-
-            // breed
-            if (_turnsSurvived >= 8)
             {
-                if (TryToBreed()) // implemented in base class InsectAgent
-                    _turnsSurvived = 0;
+                //Console.WriteLine($"agg magnat o piecur");
+                _energy += 20;
+
             }
 
+            // breed
+
+            if (TryToBreed())
+            {
+                //Console.WriteLine($"double lupo");
+                _energy /= 2;
+
+            } // implemented in base class InsectAgent
+
+
             // starve
-            if (_lastEaten >= 3)
+            if (_energy <= 0) 
                 Die();
         }
 
@@ -89,7 +100,7 @@ namespace PredatorPrey
 
             for (int i = 0; i < 4; i++)
             {
-                if (_world.ValidMovement(this, (Direction)i, CellState.Ant, out newLine, out newColumn))
+                if (_world.ValidMovement(this, (Direction)i, CellState.Sheep, out newLine, out newColumn))
                     allowedDirections.Add((Direction)i);
             }
 
@@ -97,10 +108,10 @@ namespace PredatorPrey
                 return false;
 
             int r = _rand.Next(allowedDirections.Count);
-            _world.ValidMovement(this, allowedDirections[r], CellState.Ant, out newLine, out newColumn);
+            _world.ValidMovement(this, allowedDirections[r], CellState.Sheep, out newLine, out newColumn);
 
-            AntAgent ant = _world.Eat(this, newLine, newColumn);
-            Environment.Remove(ant);
+            Sheep sheep = _world.Eat(this, newLine, newColumn);
+            Environment.Remove(sheep);
 
             return true;
         }

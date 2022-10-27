@@ -18,10 +18,11 @@ namespace PredatorPrey
 {
     public class Settings
     {
-        public static int GridSize = 565; //20;
         public static int NoTurns = 200;
-        public static int NoAnts = 19200; //100
-        public static int NoDoodlebugs = 12800; //2
+
+        public static int GridSize = 282; //20;
+        public static int NoAnts = 4800; //100
+        public static int NoDoodlebugs = 3200; //2
 
         public static bool ShowWorld = false;
         public static bool Verbose = false;

@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AntAgent.cs" />
+    <Compile Include="Sheep.cs" />
     <Compile Include="DoodlebugAgent.cs" />
     <Compile Include="InsectAgent.cs" />
     <Compile Include="Program.cs" />

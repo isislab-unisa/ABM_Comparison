@@ -3,7 +3,7 @@ using System.Text;
 
 namespace PredatorPrey
 {
-    public enum CellState { Empty, Ant, Doodlebug };
+    public enum CellState { Empty, Sheep, Doodlebug };
 
     public enum Direction { Up, Down, Left, Right };
 
@@ -22,27 +22,52 @@ namespace PredatorPrey
     public class World
     {
         private Cell[,] _map;
+        private int[,] _grassfield;
         private int _currentId;
+        private static Random _rand = new Random();
 
         public World()
         {
             _map = new Cell[Settings.GridSize, Settings.GridSize];
+            _grassfield = new int[Settings.GridSize, Settings.GridSize];
             for (int i = 0; i < Settings.GridSize; i++)
                 for (int j = 0; j < Settings.GridSize; j++)
+                {
                     _map[i, j] = new Cell();
+                    double r = _rand.NextDouble();
+                    if (r < 0.5)
+                        _grassfield[i, j] = 20;
+                    else
+                    {
+                        _grassfield[i, j] = _rand.Next(20);
+                    }
+
+                }
 
             _currentId = 0;
         }
 
         public void AddAgentToMap(InsectAgent a, int line, int column)
         {
-            if (a.GetType().Name == "AntAgent")
-                _map[line, column].State = CellState.Ant;
+            if (a.GetType().Name == "Sheep")
+                _map[line, column].State = CellState.Sheep;
             else if (a.GetType().Name == "DoodlebugAgent")
                 _map[line, column].State = CellState.Doodlebug;
 
             a.Line = line; a.Column = column;
             _map[line, column].AgentInCell = a;
+        }
+
+        public bool CheckFood(int line, int column)
+        {
+            //true if there is food
+            if (_grassfield[line, column] >= 20)
+            {
+                _grassfield[line, column] = 0;
+                return true;
+            }
+            else
+                return false;
         }
 
         public void AddAgentToMap(InsectAgent a, int vectorPosition)
@@ -55,7 +80,7 @@ namespace PredatorPrey
 
         public string CreateName(InsectAgent a)
         {
-            if (a.GetType().Name == "AntAgent")
+            if (a.GetType().Name == "Sheep")
                 return $"a{_currentId++}";
             else if (a.GetType().Name == "DoodlebugAgent")
                 return $"d{_currentId++}";
@@ -63,9 +88,9 @@ namespace PredatorPrey
             throw new Exception($"Unknown agent type: {a.GetType()}");
         }
 
-        public void CountInsects(out int noDoodlebugs, out int noAnts)
+        public void CountInsects(out int noDoodlebugs, out int noSheeps)
         {
-            noAnts = 0;
+            noSheeps = 0;
             noDoodlebugs = 0;
 
             for (int i = 0; i < Settings.GridSize; i++)
@@ -73,8 +98,8 @@ namespace PredatorPrey
                 {
                     if (_map[i, j].State == CellState.Doodlebug)
                         noDoodlebugs++;
-                    else if (_map[i, j].State == CellState.Ant)
-                        noAnts++;
+                    else if (_map[i, j].State == CellState.Sheep)
+                        noSheeps++;
                 }
         }
 
@@ -94,14 +119,23 @@ namespace PredatorPrey
             a.Column = newColumn;
         }
 
-        public InsectAgent Breed(InsectAgent a, int newLine, int newColumn)
+        public void UpdateGrass()
+        {
+            for (int i = 0; i < Settings.GridSize; i++)
+                for (int j = 0; j < Settings.GridSize; j++)
+                {
+                    _grassfield[i, j] += 1;
+                }
+        }
+
+        public InsectAgent Breed(InsectAgent a, int newLine, int newColumn, int e)
         {
             InsectAgent offspring = null;
 
-            if (a.GetType().Name == "AntAgent")
-                offspring = new AntAgent();
+            if (a.GetType().Name == "Sheep")
+                offspring = new Sheep(e);
             else if (a.GetType().Name == "DoodlebugAgent")
-                offspring = new DoodlebugAgent();
+                offspring = new DoodlebugAgent(e);
 
             string name = CreateName(offspring);
             offspring.Name = name;
@@ -113,12 +147,12 @@ namespace PredatorPrey
             return offspring;
         }
 
-        public AntAgent Eat(DoodlebugAgent da, int newLine, int newColumn)
+        public Sheep Eat(DoodlebugAgent da, int newLine, int newColumn)
         {
-            var ant = (AntAgent)_map[newLine, newColumn].AgentInCell;
+            var sheep = (Sheep)_map[newLine, newColumn].AgentInCell;
 
             if (Settings.Verbose)
-                Console.WriteLine($"Removing {ant.Name}");
+                Console.WriteLine($"Removing {sheep.Name}");
 
             // moving the doodlebug
 
@@ -136,10 +170,16 @@ namespace PredatorPrey
             da.Line = newLine;
             da.Column = newColumn;
 
-            return ant;
+            return sheep;
         }
 
         public void Die(DoodlebugAgent da)
+        {
+            _map[da.Line, da.Column].State = CellState.Empty;
+            _map[da.Line, da.Column].AgentInCell = null;
+        }
+
+        public void Die(InsectAgent da)
         {
             _map[da.Line, da.Column].State = CellState.Empty;
             _map[da.Line, da.Column].AgentInCell = null;
@@ -197,8 +237,8 @@ namespace PredatorPrey
                             sb.Append("-");
                             break;
 
-                        case CellState.Ant:
-                            sb.Append("a");
+                        case CellState.Sheep:
+                            sb.Append("S");
                             break;
 
                         case CellState.Doodlebug:

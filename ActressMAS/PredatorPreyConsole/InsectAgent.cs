@@ -25,10 +25,17 @@ namespace PredatorPrey
         protected int _turnsSurvived;
         protected World _world;
         protected static Random _rand = new Random();
+        protected int _energy = 0;
+
+        public InsectAgent(int energy)
+        {
+            _energy = energy;
+        }
 
         public int Line { get; set; } // position on the grid
 
         public int Column { get; set; } // position on the grid
+        
 
         protected bool TryToMove()
         {
@@ -47,6 +54,12 @@ namespace PredatorPrey
                 return false;
         }
 
+        protected bool TryToEat()
+        {
+            return _world.CheckFood(this.Line, this.Column);
+        }
+
+
         protected bool TryToBreed()
         {
             var allowedDirections = new List<Direction>();
@@ -64,10 +77,27 @@ namespace PredatorPrey
             int r = _rand.Next(allowedDirections.Count);
             _world.ValidMovement(this, allowedDirections[r], CellState.Empty, out newLine, out newColumn);
 
-            var newInsect = _world.Breed(this, newLine, newColumn);
-            Environment.Add(newInsect);
+            double r2 = _rand.NextDouble();
+            if (r2 < 0.4)
+            {
+                var newInsect = _world.Breed(this, newLine, newColumn, this._energy/2);
+                Environment.Add(newInsect);
+                return true;
+            }
+            
 
-            return true;
+            return false;
+        }
+
+        protected void Die()
+        {
+            // removing the ant
+
+            if (Settings.Verbose)
+                Console.WriteLine($"Removing {Name}");
+
+            _world.Die(this);
+            Stop();
         }
     }
 }
