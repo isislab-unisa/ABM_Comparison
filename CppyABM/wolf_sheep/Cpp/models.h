@@ -159,7 +159,7 @@ struct WolfSheep: public Env<WolfSheep,Animal,GrassPatch>{
 	void step(){
 		this->activate_random();
 		this->step_patches();
-		this->collect_output();
+		// this->collect_output();
 		this->update();
 	}
 	void collect_output(){
@@ -178,7 +178,7 @@ struct WolfSheep: public Env<WolfSheep,Animal,GrassPatch>{
 		auto end = chrono::high_resolution_clock::now();
         auto iter_dur = chrono::duration_cast<chrono::milliseconds>(end-start);
 
-		this->output(this->data,iter_dur.count());
+		// this->output(this->data,iter_dur.count());
 		return this->data;
 	}
 	void output(DataType&,float);
