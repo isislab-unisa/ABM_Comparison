@@ -16,6 +16,7 @@ pub enum Status {
     Green,   // tree alive - the fire can spread here
     Burning, // burning tree - the fire is here
     Burned,  // burned tree - the fire stopped here and moved
+    Empty
 }
 
 impl fmt::Display for Status {
@@ -24,6 +25,7 @@ impl fmt::Display for Status {
             Status::Green => write!(f, "Green"),
             Status::Burning => write!(f, "Burning"),
             Status::Burned => write!(f, "Burned"),
+            Status::Empty => write!(f, "Empty"),
         }
     }
 }
@@ -68,6 +70,8 @@ pub struct Forest {
     pub green: i32,
     pub dim: (i32, i32),
     pub density: f64,
+    pub last_active: u64,
+    pub stucked: u64,
 }
 
 impl Forest {
@@ -83,6 +87,8 @@ impl Forest {
             burned: 0,
             burning: 0,
             green: 0,
+            last_active: 0,
+            stucked: 0,
         }
     }
 
@@ -98,7 +104,27 @@ impl Forest {
 
 impl State for Forest {
     fn update(&mut self, _step: u64) {
-        self.field.lazy_update();
+        for i in 0..self.field.width {
+            for j in 0..self.field.height {
+                let tree = match self.field.get_objects_unbuffered(&Int2D { x: i, y: j }) {
+                    Some(t) => t[0],
+                    None => {
+                        print!("X-");
+                        continue;
+                    }
+                };
+                if tree.status == Status::Burned {
+                    print!("R-");
+                } else if tree.status == Status::Green {
+                    print!("G-");
+                } else if tree.status == Status::Burning {
+                    print!("B-");
+                } else {
+                    print!("X-");
+                }
+            }
+            println!();
+        }
     }
 
     fn reset(&mut self) {
@@ -130,9 +156,21 @@ impl State for Forest {
                     );
                     ids += 1;
                 }
+                else {
+                    self.field.set_object_location(
+                        Tree {
+                            id: ids,
+                            status: Status::Empty,
+                        },
+                        &Int2D { x: i, y: j },
+                    );
+                    ids += 1;
+                }
             }
         }
         let spreader = Spread { id: 0 };
+
+        // self.field.lazy_update();
         schedule.schedule_repeating(Box::new(spreader), 0., 0);
     }
 
@@ -157,6 +195,9 @@ impl State for Forest {
     }
 
     fn end_condition(&mut self, _schedule: &mut Schedule) -> bool {
+        if (self.step > self.dim.0 as u64) {
+            return true;
+        }
         // for i in 0..self.field.width {
         //     for j in 0..self.field.height {
         //         let tree = match self.field.get_objects(&Int2D { x: i, y: j }) {
@@ -166,13 +207,16 @@ impl State for Forest {
         //             }
         //         };
         //         if tree.status == Status::Burned {
-        //             self.burned += 1;
+        //             print!("B-")
         //         } else if tree.status == Status::Green {
-        //             self.green += 1;
+        //             print!("G-")
+        //         } else if tree.status == Status::Burning {
+        //             print!("R-")
         //         } else {
-        //             self.burning += 1
+        //             print!("?-")
         //         }
         //     }
+        //     println!();
         // }
 
         // if (self.before_burned == self.burned)

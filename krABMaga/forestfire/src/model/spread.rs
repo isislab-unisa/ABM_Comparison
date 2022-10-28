@@ -16,14 +16,114 @@ pub struct Spread {
 
 impl Agent for Spread {
     fn step(&mut self, state: &mut dyn State) {
-        let real_state = state.as_any().downcast_ref::<Forest>().unwrap();
 
-        let updates = RefCell::new(Vec::<(Tree, Int2D)>::new());
-        real_state.field.iter_objects(|loc, &(mut value)| {
-            if loc.x <= real_state.step as i32 + 1 {
-                let x = loc.x;
-                let y = loc.y;
-                if value.status == Status::Green {
+        let real_state = state.as_any_mut().downcast_mut::<Forest>().unwrap();
+
+        let minmax;
+        if real_state.step + 1 < (real_state.dim.0 - 1).try_into().unwrap() {
+            minmax = real_state.step + 1;
+        } else {
+            minmax = (real_state.dim.0 - 1).try_into().unwrap();
+        }
+        let mut l = real_state.last_active;
+        if l <= 0 {
+            l = 0;
+        } else {
+            l -= 1;
+        }
+        
+        for my_i  in l..minmax  {
+            let mut active_tree = false;
+
+            for my_j in 0..real_state.dim.0 {
+                let mut tree = real_state
+                    .field
+                    .get_objects_unbuffered(&Int2D {
+                        x: my_i as i32,
+                        y: my_j as i32,
+                    })
+                    .unwrap()[0];
+                if tree.status == Status::Green {
+                    let mut isolated = true;
+                    for i in 0..3 {
+                        for j in 0..3 {
+                            if !(i == 1 && j == 1) {
+                                let loc_n = Int2D {
+                                    // location of neighbor
+                                    x: my_i as i32 + i - 1,
+                                    y: my_j as i32 + j - 1,
+                                };
+                                // not toroidal
+                                if loc_n.x < 0
+                                    || loc_n.y < 0
+                                    || loc_n.x >= real_state.dim.0
+                                    || loc_n.y >= real_state.dim.1
+                                {
+                                    continue;
+                                };
+
+                                // take the neighbor
+                                let neighbor = match real_state.field.get_objects_unbuffered(&loc_n)
+                                {
+                                    Some(t) => t[0],
+                                    None => {
+                                        continue;
+                                    }
+                                };
+                                // if a neighbor is BURNING, set me on BURNING
+                                if neighbor.status == Status::Green || neighbor.status == Status::Burning {
+                                    isolated = false;
+                                    continue;
+                                    
+                                }
+                            }
+                        }
+                        
+                    }
+                    if !isolated {
+                        active_tree = true;
+                        l = my_i+1;
+                        break;
+                    }
+                    
+
+                    
+                } else if tree.status == Status::Burning {
+                    active_tree = true;
+                    l = my_i+1;
+                    break;
+                }
+            }
+            if active_tree {
+                break;
+            }
+        }
+        
+        if (real_state.last_active == l) {
+            real_state.stucked += 1;
+            if real_state.stucked == 5 {
+                real_state.last_active += 1;
+                real_state.stucked = 0;
+            }
+        } else {
+            real_state.last_active = l;
+            real_state.stucked = 0;
+        }
+
+        let lg = real_state.last_active as u64;
+
+        for ii in ((lg-1)..minmax + 1).rev() {
+            for jj in 0..real_state.dim.0 {
+                let mut tree = real_state
+                    .field
+                    .get_objects_unbuffered(&Int2D {
+                        x: ii as i32,
+                        y: jj as i32,
+                    })
+                    .unwrap()[0];
+                let x = ii as i32;
+                let y = jj as i32;
+                if tree.status == Status::Green {
                     // get the neighbors around me
                     let mut update = false;
                     for i in 0..3 {
@@ -44,7 +144,8 @@ impl Agent for Spread {
                                 };
 
                                 // take the neighbor
-                                let neighbor = match real_state.field.get_objects(&loc_n) {
+                                let neighbor = match real_state.field.get_objects_unbuffered(&loc_n)
+                                {
                                     Some(t) => t[0],
                                     None => {
                                         continue;
@@ -52,9 +153,10 @@ impl Agent for Spread {
                                 };
                                 // if a neighbor is BURNING, set me on BURNING
                                 if neighbor.status == Status::Burning {
-                                    value.status = Status::Burning;
+                                    tree.status = Status::Burning;
                                     //println!("I am {:?} passing on {:?} from {:?} step {}", value.id, value.status, neighbor.id, schedule.step);
                                     update = true;
+                                    real_state.field.set_object_location(tree, &Int2D { x, y });
                                     break; // avoid to be burned more than once
                                 }
                             }
@@ -63,22 +165,15 @@ impl Agent for Spread {
                             break;
                         }
                     }
-                } else if value.status == Status::Burning {
-                    // if I am BURNING, set me on BURNED
-                    value.status = Status::Burned;
-                    //println!("I am {:?} passing on {:?} step {}", value.id, value.status, schedule.step);
+                } else if tree.status == Status::Burning {
+                    tree.status = Status::Burned;
+                    real_state.field.set_object_location(tree, &Int2D { x, y });
                 }
-            } 
-            // else {
-            //     return;
-            // }
-            updates.borrow_mut().push((value, *loc));
-        });
 
-        let updates = updates.borrow_mut();
-        for obj in updates.iter() {
-            real_state.field.set_object_location(obj.0, &obj.1);
+
+            }
         }
+        
     }
 }
 

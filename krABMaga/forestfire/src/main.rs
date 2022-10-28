@@ -29,7 +29,7 @@ pub const DENSITY: f64 = 0.7; */
 #[cfg(not(any(feature = "visualization", feature = "visualization_wasm")))]
 fn main() {
     let step = 200;
-    let dim: (i32, i32) = (1131, 1131);
+    let dim: (i32, i32) = (100, 100);
     let density: f64 = 0.7;
     let forest = Forest::new(dim, density);
     let _ = simulate!(forest, step, 1, false);
